@@ -1,0 +1,17 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int):
+
+        self.nums  = nums
+        self.target = target
+        
+        ind = {}
+
+        for i,value in enumerate(nums):
+            rem = target - nums[i]  ### as the array is sorted and only one output is possible we find the second number by this
+
+            if rem in ind:
+
+                return [ind[rem],i ### as the dict has numbers and indices in array as the key value pairs we can return the indices this way   
+
+            else:
+                ind[value] = i
